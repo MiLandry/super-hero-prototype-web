@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import GridList from '@material-ui/core/GridList'
 import './DiceBag.css';
 
 class DiceBag extends Component {
   render() {
     return (
-      <div className="dice-bag">
-      white die
-      </div>
+      <GridList >
+      <p>whitedie</p>
+      </GridList>
+
     );
   }
 }
