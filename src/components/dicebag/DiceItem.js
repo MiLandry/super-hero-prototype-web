@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
+import styled from 'styled-components'
 import GridList from '@material-ui/core/GridList'
 import './DiceItem.css';
+
+const ColoredDie = styled.div`
+  background-color: white;
+  width: 2rem;
+  height: 2rem;
+  border: solid;
+  margin-right: 10px;
+
+`
+
 
 class DiceItem extends Component {
   render() {
     return (
       <>
-      <div>
-      
-      </div>
+      <ColoredDie></ColoredDie>
       <span>
       x 3
         
