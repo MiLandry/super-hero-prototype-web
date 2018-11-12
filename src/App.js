@@ -5,12 +5,30 @@ import logo from './logo.svg';
 import './App.css';
 import DiceBag from './components/dicebag/DiceBag'
 
+const setSpiderMan = () => {
+  this.setState('spiermdandinec')
+  alert('setSpiderMan')
+}
+
+const onChooseHeroClick = () => {
+  setSpiderMan()
+}
+
+
+
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <DiceBag/>
-        <Button variant="contained" color="primary"> choose hero  </Button>
+        <DiceBag
+        dice={this.state.dice}
+        />
+        <Button
+        variant="contained"
+        color="primary"
+        onClick={onChooseHeroClick}
+
+        > choose hero  </Button>
           <button>change dice bag</button>
           <button>create dice pool</button>
           <div className="dice-pool">wwwr</div>
