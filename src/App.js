@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button'
 import logo from './logo.svg'
 import './App.css'
 import DiceBag from './components/dicebag/DiceBag'
+import AddDie from './components/add-die/AddDie'
 
 const setSpiderMan = () => {
   this.setState('spiermdandinec')
@@ -19,16 +20,42 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      dice: {},
+      dice: [
+        'white',
+        'white',
+        'white',
+        'white',
+        'white',
+        'red',
+        'red',
+        'red',
+      ],
     }
-    // this.increment = this.increment.bind(this);
+    this.pushDie = this.pushDie.bind(this)
+    this.handlePushDieClick = this.handlePushDieClick.bind(this)
   }
 
+  handlePushDieClick(event) {
+    event.preventDefault()
+    this.pushDie('green')
+  }
+
+  pushDie(color = 'green') {
+    const { dice } = this.state
+    console.log('color', color)
+
+    const newDice = [...dice, color]
+    console.log('newDice', newDice)
+    this.setState({ dice: newDice })
+  }
+
+
   render() {
+    const { dice } = this.state
     return (
       <div className="App">
         <DiceBag
-          dice={this.state.dice}
+          dice={dice}
         />
         <Button
           variant="contained"
@@ -36,13 +63,30 @@ class App extends Component {
           onClick={onChooseHeroClick}
 
         >
-          {' '}
 choose hero
-          {' '}
         </Button>
-        <button>change dice bag</button>
-        <button>create dice pool</button>
-        <div className="dice-pool">wwwr</div>
+        <AddDie></AddDie>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={this.handlePushDieClick}
+        >
+        Remove die
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={this.handlePushDieClick}
+        >
+        Draw Dice
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={this.handlePushDieClick}
+        >
+        Roll dice
+        </Button>
       </div>
     )
   }
