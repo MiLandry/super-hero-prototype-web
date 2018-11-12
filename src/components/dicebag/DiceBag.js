@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 import GridList from '@material-ui/core/GridList'
 import styled from 'styled-components'
 import DiceItem from './DiceItem'
@@ -19,7 +20,10 @@ class DiceBag extends Component {
         <h2> Dice Bag </h2>
         <GridListWraper>
           <GridList>
-            <DiceItem />
+            <DiceItem
+            color={'white'}
+            count={4}
+            />
           </GridList>
         </GridListWraper>
       </React.Fragment>
@@ -28,11 +32,7 @@ class DiceBag extends Component {
 }
 
 DiceBag.propTypes = {
-  lat: React.PropTypes.number,
-  lon: React.PropTypes.number,
-  mapsApiHostname: React.PropTypes.string,
-  markers: React.PropTypes.array,
-  onChange: React.PropTypes.func,
+  dice: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default DiceBag
