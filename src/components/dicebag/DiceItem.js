@@ -9,7 +9,10 @@ class DiceItem extends Component {
       <div>
       
       </div>
+      <span>
       x 3
+        
+      </span>
       </>
 
     );

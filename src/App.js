@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Button from '@material-ui/core/Button';
 import logo from './logo.svg';
 import './App.css';
-import DiceBag from './components/DiceBag'
+import DiceBag from './components/dicebag/DiceBag'
 
 class App extends Component {
   render() {
