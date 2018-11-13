@@ -47,6 +47,7 @@ const DiceBag = (props) => {
   return (
     <React.Fragment>
       <h2> Dice Bag </h2>
+      <p>(click on dice to remove)</p>
       <GridListWraper>
         <GridList>
           {diceItems}
