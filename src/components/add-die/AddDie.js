@@ -5,6 +5,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Button from '@material-ui/core/Button'
 import styled, { css } from 'styled-components'
 import { DICE_COLORS } from '../../const'
+import autobind from 'autobind-decorator'
 
 const ButtonGroup = styled.div`
   background-color: black;
@@ -33,15 +34,16 @@ margin: 4px 2px;
 
 `
 
-const handleClick = (event) => {
-  // alert(event.target.value)
-  this.props.(addDieToBag(event.target.value))
-}
 
 class AddDie extends React.Component {
   constructor(props) {
     super(props)
     this.state = { selected: 'grey' }
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick(event) {
+    this.props.addDieToBag(event.target.value)
   }
 
   render() {
@@ -52,7 +54,7 @@ class AddDie extends React.Component {
       key={color}
       label={color}
       color={color}
-      onClick={handleClick}
+      onClick={this.handleClick}
       >{color}</AddDieButton>
     ))
 

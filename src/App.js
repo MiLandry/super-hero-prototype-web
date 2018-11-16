@@ -52,7 +52,9 @@ class App extends Component {
         <DiceBag
           dice={dice}
         />
-        <AddDie></AddDie>
+        <AddDie
+        addDieToBag={this.pushDie}
+        ></AddDie>
         <Button
         primary
           onClick={this.handlePushDieClick}
