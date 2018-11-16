@@ -1,17 +1,41 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Radio from '@material-ui/core/Radio'
-import RadioGroup from '@material-ui/core/RadioGroup'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Button from '@material-ui/core/Button'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { DICE_COLORS } from '../../const'
 
-const AddDieWrapper = styled.div`
-  background-color: grey;
+const ButtonGroup = styled.div`
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2em;
+  justify-content: space-evenly;
 `
-const handleClick = (e) => {
-  alert('sntaohei')
+
+const AddDieButton = styled.button`
+border-radius: 30px;
+background-color: #4CAF50;
+border: none;
+color: white;
+padding: 20px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+
+  ${props => props.color
+    && css`
+      background: ${props.color};
+    `};
+
+`
+
+const handleClick = (event) => {
+  // alert(event.target.value)
+  this.props.(addDieToBag(event.target.value))
 }
 
 class AddDie extends React.Component {
@@ -21,34 +45,29 @@ class AddDie extends React.Component {
   }
 
   render() {
-    const radioButtons = DICE_COLORS.map(color => (
-      <FormControlLabel value={color} control={<Radio />} label={color} />
+    const colorButtons = DICE_COLORS.map(color => (
+      <AddDieButton
+      type="button"
+      value={color}
+      key={color}
+      label={color}
+      color={color}
+      onClick={handleClick}
+      >{color}</AddDieButton>
     ))
 
     return (
-      <AddDieWrapper>
+      <>
+      add Dice
+        <ButtonGroup>
 
-        <RadioGroup
-          aria-label="Gender"
-          name="gender1"
-        >
-          {radioButtons}
+          {colorButtons}
 
-        </RadioGroup>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={handleClick}
-        >
-    Add die
-        </Button>
-      </AddDieWrapper>
+
+        </ButtonGroup>
+        </>
     )
   }
-}
-
-AddDie.propTypes = {
-  dice: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
 export default AddDie

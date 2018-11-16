@@ -12,7 +12,9 @@ To demo and play with mocha API and Mock API
 `yarn start`
 
 then browse to 
-http://localhost:8080
+http://localhost:3000/
+
+and don't forget to run it in mobile view
 
 ## Tests
 

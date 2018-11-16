@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Button from '@material-ui/core/Button'
+import Button from './components/core/Button'
 import logo from './logo.svg'
 import './App.css'
 import DiceBag from './components/dicebag/DiceBag'
@@ -10,11 +10,6 @@ const setSpiderMan = () => {
   this.setState('spiermdandinec')
   alert('setSpiderMan')
 }
-
-const onChooseHeroClick = () => {
-  setSpiderMan()
-}
-
 
 class App extends Component {
   constructor(props) {
@@ -57,18 +52,9 @@ class App extends Component {
         <DiceBag
           dice={dice}
         />
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={onChooseHeroClick}
-
-        >
-choose hero
-        </Button>
         <AddDie></AddDie>
         <Button
-          variant="contained"
-          color="primary"
+        primary
           onClick={this.handlePushDieClick}
         >
         Remove die
