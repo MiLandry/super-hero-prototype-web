@@ -16,6 +16,7 @@ const GridListWraper = styled.div`
 const DiceBag = (props) => {
   const {
     dice,
+    removeDie,
   } = props
 
   const bucketedDice = dice.reduce((acc, color) => {
@@ -41,6 +42,7 @@ const DiceBag = (props) => {
       key={diceItem.color}
       color={diceItem.color}
       count={diceItem.count}
+      removeDie={removeDie}
     />
   ))
 

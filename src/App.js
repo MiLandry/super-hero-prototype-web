@@ -5,6 +5,7 @@ import logo from './logo.svg'
 import './App.css'
 import DiceBag from './components/dicebag/DiceBag'
 import AddDie from './components/add-die/AddDie'
+import { removeSpecifiedElementFromArray } from './utils'
 
 const setSpiderMan = () => {
   this.setState('spiermdandinec')
@@ -28,6 +29,15 @@ class App extends Component {
     }
     this.pushDie = this.pushDie.bind(this)
     this.handlePushDieClick = this.handlePushDieClick.bind(this)
+    this.removeDie = this.removeDie.bind(this)
+  }
+
+  removeDie(color) {
+    const {
+      dice,
+    } = this.state
+    const newDiceBag = removeSpecifiedElementFromArray(dice, color)
+    this.setState({ dice: newDiceBag })
   }
 
   handlePushDieClick(event) {
@@ -51,12 +61,13 @@ class App extends Component {
       <div className="App">
         <DiceBag
           dice={dice}
+          removeDie={this.removeDie}
         />
         <AddDie
-        addDieToBag={this.pushDie}
-        ></AddDie>
+          addDieToBag={this.pushDie}
+        />
         <Button
-        primary
+          primary
           onClick={this.handlePushDieClick}
         >
         Remove die

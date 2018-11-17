@@ -19,10 +19,19 @@ class DiceItem extends Component {
       margin-right: 10px;
 
     `
+    const handleDiceItemOnClick = event => {
+      const {
+        color,
+        removeDie,
+      } = this.props
+      this.props.removeDie(color)
+    }
 
     return (
       <React.Fragment>
-        <ColoredDie />
+        <ColoredDie
+        onClick={handleDiceItemOnClick}
+         />
         <span>
       x
           {' '}
