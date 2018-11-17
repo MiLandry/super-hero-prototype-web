@@ -26,6 +26,7 @@ text-decoration: none;
 display: inline-block;
 font-size: 16px;
 margin: 4px 2px;
+width: 8em;
 
   ${props => props.color
     && css`
