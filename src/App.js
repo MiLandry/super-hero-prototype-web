@@ -5,6 +5,7 @@ import logo from './logo.svg'
 import './App.css'
 import DiceBag from './components/dicebag/DiceBag'
 import AddDie from './components/add-die/AddDie'
+import DicePool from './components/dice-pool/DicePool'
 import { removeSpecifiedElementFromArray } from './utils'
 
 const setSpiderMan = () => {
@@ -66,19 +67,7 @@ class App extends Component {
         <AddDie
           addDieToBag={this.pushDie}
         />
-        <Button
-          primary
-          onClick={this.handlePushDieClick}
-        >
-        Remove die
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={this.handlePushDieClick}
-        >
-        Draw Dice
-        </Button>
+        <DicePool></DicePool>
         <Button
           variant="contained"
           color="primary"
