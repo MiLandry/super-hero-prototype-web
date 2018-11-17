@@ -5,7 +5,7 @@ import logo from './logo.svg'
 import './App.css'
 import DiceBag from './components/dicebag/DiceBag'
 import AddDie from './components/add-die/AddDie'
-import DicePool from './components/dice-pool/DicePool'
+import DiceIncrementor from './components/dice-pool/DiceIncrementor'
 import { removeSpecifiedElementFromArray } from './utils'
 
 const setSpiderMan = () => {
@@ -27,6 +27,10 @@ class App extends Component {
         'red',
         'red',
       ],
+      drawnDice: [
+      'white',
+      'blue'
+      ]
     }
     this.pushDie = this.pushDie.bind(this)
     this.handlePushDieClick = this.handlePushDieClick.bind(this)
@@ -57,7 +61,7 @@ class App extends Component {
 
 
   render() {
-    const { dice } = this.state
+    const { dice, drawnDice } = this.state
     return (
       <div className="App">
         <DiceBag
@@ -67,7 +71,12 @@ class App extends Component {
         <AddDie
           addDieToBag={this.pushDie}
         />
-        <DicePool></DicePool>
+        <DiceIncrementor></DiceIncrementor>
+        <Button>DrawDice</Button>
+        <DiceBag
+          dice={drawnDice}
+          removeDie={this.removeDie}
+        />
         <Button
           variant="contained"
           color="primary"

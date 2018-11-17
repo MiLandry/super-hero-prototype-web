@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Button from './Button'
 
 class Increment extends Component {
     constructor(props) {
@@ -26,8 +27,8 @@ class Increment extends Component {
     return (
       <div>
         <div id="counter">{this.state.counter}</div>
-        <button onClick={this.increment}> Add 1 </button>
-        <button onClick={this.decrement}> Minus 1 </button>
+        <Button onClick={this.increment}> + </Button>
+        <Button onClick={this.decrement}> - </Button>
       </div>
     )
   }
