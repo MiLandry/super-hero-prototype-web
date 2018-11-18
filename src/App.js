@@ -27,14 +27,15 @@ class App extends Component {
         'red',
         'red',
       ],
-      drawnDice: [
-      'white',
-      'blue'
-      ]
+      drawnDice: []
     }
     this.pushDie = this.pushDie.bind(this)
     this.handlePushDieClick = this.handlePushDieClick.bind(this)
     this.removeDie = this.removeDie.bind(this)
+  }
+
+  drawDice() {
+    
   }
 
   removeDie(color) {
@@ -67,15 +68,17 @@ class App extends Component {
         <DiceBag
           dice={dice}
           removeDie={this.removeDie}
+          title="Dice Bag"
         />
         <AddDie
           addDieToBag={this.pushDie}
         />
         <DiceIncrementor></DiceIncrementor>
-        <Button>DrawDice</Button>
+        <Button onClick={this.drawDice}>DrawDice</Button>
         <DiceBag
           dice={drawnDice}
           removeDie={this.removeDie}
+          title=""
         />
         <Button
           variant="contained"

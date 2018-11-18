@@ -1,5 +1,14 @@
 import React, { Component } from 'react'
 import Button from './Button'
+import styled, { css } from 'styled-components'
+
+const IncrementSpan = styled.span`
+  font-size: 2em;
+`
+
+const CounterWrapper = styled.div`
+  font-size: 2rem;
+`
 
 class Increment extends Component {
     constructor(props) {
@@ -26,9 +35,9 @@ class Increment extends Component {
   render() {
     return (
       <div>
-        <div id="counter">{this.state.counter}</div>
-        <Button onClick={this.increment}> + </Button>
-        <Button onClick={this.decrement}> - </Button>
+        <CounterWrapper>{this.state.counter}</CounterWrapper>
+        <Button onClick={this.increment}> <IncrementSpan> + </IncrementSpan></Button>
+        <Button onClick={this.decrement}><IncrementSpan> - </IncrementSpan></Button>
       </div>
     )
   }

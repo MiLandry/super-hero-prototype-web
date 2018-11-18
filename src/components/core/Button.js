@@ -5,10 +5,10 @@ const Button = styled.button`
   border-radius: 3px;
   border: none;
   color: white;
-  margin: 1em;
-  padding: 1em;
-  width: 6em;
-  font-size: 16px;
+  margin: 1rem;
+  width: 7rem;
+  height: 3rem;
+  font-size: 1.2rem;
 
   ${props => props.primary
     && css`

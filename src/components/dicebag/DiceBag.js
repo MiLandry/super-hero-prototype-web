@@ -17,6 +17,7 @@ const DiceBag = (props) => {
   const {
     dice,
     removeDie,
+    title,
   } = props
 
   const bucketedDice = dice.reduce((acc, color) => {
@@ -48,7 +49,7 @@ const DiceBag = (props) => {
 
   return (
     <React.Fragment>
-      <h2> Dice Bag </h2>
+      <h2> {title} </h2>
       <p>(click on dice to remove)</p>
       <GridListWraper>
         <GridList>
