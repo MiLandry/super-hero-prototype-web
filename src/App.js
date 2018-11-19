@@ -11,11 +11,27 @@ import {
   drawXfromBag,
 } from './utils'
 import RolledDiceModal from 'components/modal/RolledDiceModal'
+import Modal from 'react-modal'
+import RolledDice from 'components/rolled-dice/RolledDice'
 
 const setSpiderMan = () => {
   this.setState('spiermdandinec')
   alert('setSpiderMan')
 }
+
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
+// Modal.setAppElement('#yourAppElement')
+
 
 class App extends Component {
   constructor(props) {
@@ -33,6 +49,7 @@ class App extends Component {
       ],
       drawnDice: [],
       dicePoolNumber: 4,
+      rolledDiceModalIsOpen: false,
     }
     this.pushDie = this.pushDie.bind(this)
     this.handlePushDieClick = this.handlePushDieClick.bind(this)
@@ -40,6 +57,22 @@ class App extends Component {
     this.drawDice = this.drawDice.bind(this)
     this.increment = this.increment.bind(this)
     this.decrement = this.decrement.bind(this)
+    this.openModal = this.openModal.bind(this)
+    this.afterOpenModal = this.afterOpenModal.bind(this)
+    this.closeModal = this.closeModal.bind(this)
+  }
+
+  openModal() {
+    this.setState({ rolledDiceModalIsOpen: true })
+  }
+
+  afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    this.subtitle.style.color = '#f00'
+  }
+
+  closeModal() {
+    this.setState({ rolledDiceModalIsOpen: false })
   }
 
   increment() {
@@ -128,7 +161,15 @@ class App extends Component {
         >
         Roll dice
         </Button>
-        <RolledDiceModal />
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+          <RolledDice />
+        </Modal>
       </div>
     )
   }
