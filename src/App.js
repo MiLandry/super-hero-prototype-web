@@ -10,6 +10,7 @@ import {
   removeSpecifiedElementFromArray,
   drawXfromBag,
 } from './utils'
+import RolledDiceModal from 'components/modal/RolledDiceModal'
 
 const setSpiderMan = () => {
   this.setState('spiermdandinec')
@@ -84,6 +85,14 @@ class App extends Component {
     this.setState({ dice: newDice })
   }
 
+  handleRollDiceClick(event) {
+    event.preventDefault()
+    // roll dice and
+    // open the modal
+
+    alert('nsatohei')
+  }
+
 
   render() {
     const {
@@ -115,10 +124,11 @@ class App extends Component {
         <Button
           variant="contained"
           color="primary"
-          onClick={this.handlePushDieClick}
+          onClick={this.handleRollDiceClick}
         >
         Roll dice
         </Button>
+        <RolledDiceModal />
       </div>
     )
   }
