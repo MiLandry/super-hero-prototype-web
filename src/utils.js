@@ -1,3 +1,5 @@
+import Combinatorics from 'js-combinatorics'
+
 export const removeSpecifiedElementFromArray = (array, element) => {
   const index = array.indexOf(element)
   if (index !== -1) {
@@ -5,3 +7,22 @@ export const removeSpecifiedElementFromArray = (array, element) => {
   }
   return array.slice(0)
 }
+
+export const drawXfromBag = (arr, x) => {
+
+  return shuffle(arr).slice(0,x)
+
+}
+/**
+ * Shuffles array in place. ES6 version
+ * @param {Array} a items An array containing the items.
+ */
+function shuffle(a) {
+    const b = a.slice(0)
+    for (let i = b.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [b[i], b[j]] = [b[j], b[i]];
+    }
+    return b;
+}
+

@@ -10,3 +10,10 @@ export const DICE_COLORS = [
 'brown',
 'pink',
 ]
+
+// used to make dark letters so readable
+export const LIGHT_COLORS = [
+'white',
+'pink',
+'gold',
+]

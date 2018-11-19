@@ -4,8 +4,8 @@ import Radio from '@material-ui/core/Radio'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Button from '@material-ui/core/Button'
 import styled, { css } from 'styled-components'
-import { DICE_COLORS } from '../../const'
 import autobind from 'autobind-decorator'
+import { DICE_COLORS } from '../../const'
 
 const ButtonGroup = styled.div`
   background-color: black;
@@ -17,21 +17,22 @@ const ButtonGroup = styled.div`
 
 const AddDieButton = styled.button`
 border-radius: 30px;
-background-color: #4CAF50;
 border: none;
+width: 8rem;
+height: 3rem;
 color: white;
-padding: 20px;
 text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
+font-size: 1.7rem;
 margin: 4px 2px;
-width: 8em;
 
-  ${props => props.color
+  ${(props) => {
+    const color = (props.color === 'white') ? 'black' : 'white'
+    return props.color
     && css`
       background: ${props.color};
-    `};
+      color: ${color}
+    `
+  }};
 
 `
 
@@ -50,13 +51,15 @@ class AddDie extends React.Component {
   render() {
     const colorButtons = DICE_COLORS.map(color => (
       <AddDieButton
-      type="button"
-      value={color}
-      key={color}
-      label={color}
-      color={color}
-      onClick={this.handleClick}
-      >{color}</AddDieButton>
+        type="button"
+        value={color}
+        key={color}
+        label={color}
+        color={color}
+        onClick={this.handleClick}
+      >
+        {color}
+      </AddDieButton>
     ))
 
     return (
