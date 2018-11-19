@@ -1,32 +1,28 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Increment from '../core/Increment'
-// import PropTypes from 'prop-types'
-// import GridList from '@material-ui/core/GridList'
-// import styled from 'styled-components'
-// import DiceItem from './DiceItem'
-// import './DiceBag.css'
 
-// const GridListWraper = styled.div`
-//   margin: 1rem;
-//   padding: 1rem;
-//   background-color: grey;
-//   border: solid;
-//   border-color: white;
-// `
-
-const DicePool = (props) => {
-
+const DiceIncrementor = (props) => {
+  const {
+    dicePoolNumber,
+    onIncrement,
+    onDecrement,
+  } = props
 
   return (
     <React.Fragment>
       <h2> Dice Pool </h2>
-      <Increment></Increment>
+      <Increment
+        dicePoolNumber={dicePoolNumber}
+        onIncrement={onIncrement}
+        onDecrement={onDecrement}
+      />
     </React.Fragment>
   )
 }
 
-DicePool.propTypes = {
-  // dice: PropTypes.arrayOf(PropTypes.string).isRequired,
+DiceIncrementor.propTypes = {
+  dicePoolNumber: PropTypes.number.isRequired,
 }
 
-export default DicePool
+export default DiceIncrementor

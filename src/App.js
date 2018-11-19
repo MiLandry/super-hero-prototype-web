@@ -37,6 +37,20 @@ class App extends Component {
     this.handlePushDieClick = this.handlePushDieClick.bind(this)
     this.removeDie = this.removeDie.bind(this)
     this.drawDice = this.drawDice.bind(this)
+    this.increment = this.increment.bind(this)
+    this.decrement = this.decrement.bind(this)
+  }
+
+  increment() {
+    this.setState({
+      dicePoolNumber: this.state.dicePoolNumber + 1,
+    })
+  }
+
+  decrement() {
+    this.setState({
+      dicePoolNumber: this.state.dicePoolNumber - 1,
+    })
   }
 
   drawDice() {
@@ -76,7 +90,7 @@ class App extends Component {
       dice,
       drawnDice,
       dicePoolNumber,
-  } = this.state
+    } = this.state
     return (
       <div className="App">
         <DiceBag
@@ -88,8 +102,10 @@ class App extends Component {
           addDieToBag={this.pushDie}
         />
         <DiceIncrementor
-
-         />
+          dicePoolNumber={dicePoolNumber}
+          onIncrement={this.increment}
+          onDecrement={this.decrement}
+        />
         <Button onClick={this.drawDice}>DrawDice</Button>
         <DiceBag
           dice={drawnDice}
