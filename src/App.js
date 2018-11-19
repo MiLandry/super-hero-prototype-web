@@ -49,7 +49,7 @@ class App extends Component {
       ],
       drawnDice: [],
       dicePoolNumber: 4,
-      rolledDiceModalIsOpen: false,
+      modalIsOpen: false,
     }
     this.pushDie = this.pushDie.bind(this)
     this.handlePushDieClick = this.handlePushDieClick.bind(this)
@@ -60,19 +60,20 @@ class App extends Component {
     this.openModal = this.openModal.bind(this)
     this.afterOpenModal = this.afterOpenModal.bind(this)
     this.closeModal = this.closeModal.bind(this)
+    this.handleRollDiceClick = this.handleRollDiceClick.bind(this)
   }
 
   openModal() {
-    this.setState({ rolledDiceModalIsOpen: true })
+    this.setState({ modalIsOpen: true })
   }
 
   afterOpenModal() {
     // references are now sync'd and can be accessed.
-    this.subtitle.style.color = '#f00'
+    // this.subtitle.style.color = '#f00'
   }
 
   closeModal() {
-    this.setState({ rolledDiceModalIsOpen: false })
+    this.setState({ modalIsOpen: false })
   }
 
   increment() {
@@ -121,9 +122,9 @@ class App extends Component {
   handleRollDiceClick(event) {
     event.preventDefault()
     // roll dice and
+    this.openModal()
     // open the modal
 
-    alert('nsatohei')
   }
 
 
