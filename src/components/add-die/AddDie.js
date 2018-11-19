@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button'
 import styled, { css } from 'styled-components'
 import autobind from 'autobind-decorator'
 import { DICE_COLORS } from '../../const'
+import { isLight } from 'utils'
 
 const ButtonGroup = styled.div`
   background-color: black;
@@ -26,7 +27,7 @@ font-size: 1.7rem;
 margin: 4px 2px;
 
   ${(props) => {
-    const color = (props.color === 'white') ? 'black' : 'white'
+    const color = (isLight(props.color)) ? 'black' : 'white'
     return props.color
     && css`
       background: ${props.color};
@@ -64,7 +65,7 @@ class AddDie extends React.Component {
 
     return (
       <>
-      add Dice
+      add Dice (AddDie)
         <ButtonGroup>
 
           {colorButtons}
