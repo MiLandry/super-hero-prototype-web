@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+// import DiceItem from 'components/dicebag/DiceItem'
+import RolledDie from './RolledDie'
 
-const RolledDice = (props) => {
-  const {
-    baz,
-  } = props
+const RolledDice = ({
+  dice,
+}) => {
+  const rolledDice = []
+
 
   return (
     <>
-      <p>A functional component</p>
+      <RolledDie />
     </>
   )
 }

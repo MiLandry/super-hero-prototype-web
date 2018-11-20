@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import GridList from '@material-ui/core/GridList'
 // import './DiceItem.css';
 
@@ -12,14 +13,14 @@ class DiceItem extends Component {
     } = this.props
 
     const ColoredDie = styled.div`
-      background-color: ${this.props.color};
+      background-color: ${color};
       width: 2rem;
       height: 2rem;
       border: solid;
       margin-right: 10px;
-
     `
-    const handleDiceItemOnClick = event => {
+
+    const handleDiceItemOnClick = (event) => {
       const {
         color,
         removeDie,
@@ -30,8 +31,8 @@ class DiceItem extends Component {
     return (
       <React.Fragment>
         <ColoredDie
-        onClick={handleDiceItemOnClick}
-         />
+          onClick={handleDiceItemOnClick}
+        />
         <span>
       x
           {' '}
@@ -42,6 +43,11 @@ class DiceItem extends Component {
 
     )
   }
+}
+
+DiceItem.propTypes = {
+  count: PropTypes.number.isRequired,
+  color: PropTypes.string.isRequired,
 }
 
 export default DiceItem

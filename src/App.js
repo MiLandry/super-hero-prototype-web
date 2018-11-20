@@ -20,15 +20,19 @@ const setSpiderMan = () => {
 }
 
 const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
-  }
-};
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    // backgroundColor: '#232125',
+    backgroundColor: 'green',
+    height: '14rem',
+    width: '14rem',
+  },
+}
 
 // Modal.setAppElement('#yourAppElement')
 
@@ -124,7 +128,6 @@ class App extends Component {
     // roll dice and
     this.openModal()
     // open the modal
-
   }
 
 
@@ -133,6 +136,7 @@ class App extends Component {
       dice,
       drawnDice,
       dicePoolNumber,
+      modalIsOpen,
     } = this.state
     return (
       <div className="App">
@@ -163,13 +167,13 @@ class App extends Component {
         Roll dice
         </Button>
         <Modal
-          isOpen={this.state.modalIsOpen}
+          isOpen={modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <RolledDice />
+        <RolledDice />
         </Modal>
       </div>
     )
