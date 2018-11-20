@@ -6,27 +6,17 @@ import icon from 'images/fist.png'
 const getDie = color => (
   styled.div`
   background-color: ${color};
-  width: 2rem;
-  height: 2rem;
   border: solid;
   margin-right: 10px;
 `
 )
-
-const foo =   styled.div`
-  background-color: purple;
-  width: 2rem;
-  height: 2rem;
-  border: solid;
-  margin-right: 10px;
-`
 
 
 const RolledDie = ({
   baz,
   zap,
 }) => {
-  const Die = getDie('white')
+  const Die = getDie('blue')
 
   return (
     <>
