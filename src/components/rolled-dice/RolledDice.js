@@ -5,14 +5,17 @@ import styled from 'styled-components'
 import RolledDie from './RolledDie'
 
 const RolledDice = ({
-  dice,
+  dice = [],
 }) => {
-  const rolledDice = []
+  const rolledDice = dice.map(color => <RolledDie color={color} />)
 
 
   return (
     <>
-      <RolledDie />
+      { (dice.length === 0)
+        ? 'Draw dice first'
+        : rolledDice
+        }
     </>
   )
 }

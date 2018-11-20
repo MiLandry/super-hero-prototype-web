@@ -3,20 +3,21 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import icon from 'images/fist.png'
 
-const getDie = color => (
+const makeDie = color => (
   styled.div`
   background-color: ${color};
   border: solid;
   margin-right: 10px;
+  height: 5rem;
+  width: 5rem;
 `
 )
 
 
 const RolledDie = ({
-  baz,
-  zap,
+  color,
 }) => {
-  const Die = getDie('blue')
+  const Die = makeDie(color)
 
   return (
     <>

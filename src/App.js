@@ -10,29 +10,15 @@ import {
   removeSpecifiedElementFromArray,
   drawXfromBag,
 } from './utils'
-import RolledDiceModal from 'components/modal/RolledDiceModal'
-import Modal from 'react-modal'
-import RolledDice from 'components/rolled-dice/RolledDice'
+import RolledDiceModal from 'components/rolled-dice/RolledDiceModal'
+
 
 const setSpiderMan = () => {
   this.setState('spiermdandinec')
   alert('setSpiderMan')
 }
 
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    // backgroundColor: '#232125',
-    backgroundColor: 'green',
-    height: '14rem',
-    width: '14rem',
-  },
-}
+
 
 // Modal.setAppElement('#yourAppElement')
 
@@ -166,15 +152,14 @@ class App extends Component {
         >
         Roll dice
         </Button>
-        <Modal
+        <RolledDiceModal
           isOpen={modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
-          style={customStyles}
           contentLabel="Example Modal"
-        >
-        <RolledDice />
-        </Modal>
+          drawnDice={drawnDice}
+          >
+        </RolledDiceModal>
       </div>
     )
   }
