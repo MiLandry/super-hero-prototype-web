@@ -1,17 +1,10 @@
 const WHITE_DIE_FACES = [
-  // 'fist',
-  // 'blank',
-  // 'blank',
-  // 'shield',
-  // 'rushingMan',
-  // 'handShake',
-  // 
   'fist',
-  'fist',
-  'fist',
-  'flame',
-  'flame',
-  'flame',
+  'shield',
+  'agility',
+  'handShake',
+  'brain',
+  'miss',
 ]
 
 const RED_DIE_FACES = [

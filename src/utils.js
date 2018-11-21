@@ -1,10 +1,14 @@
 import { LIGHT_COLORS } from 'const'
 import { DICE_FACES } from 'const/diceFaces'
+//images
 import fist from 'images/fist.png'
+import shield from 'images/shield.png'
+import agility from 'images/agility.png'
+import handShake from 'images/handshake.png'
+import brain from 'images/brain.png'
+import miss from 'images/miss.png'
 import flame from 'images/flame.png'
-import shield from 'images/fist.png'
-import handShake from 'images/fist.png'
-import rushingMan from 'images/fist.png'
+
 
 export const removeSpecifiedElementFromArray = (array, element) => {
   const index = array.indexOf(element)
@@ -32,6 +36,11 @@ export const isLight = color => LIGHT_COLORS.includes(color)
 
 const ICONS = {
   fist,
+  shield,
+  agility,
+  handShake,
+  brain,
+  miss,
   flame,
 }
 
