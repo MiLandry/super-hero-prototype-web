@@ -24,13 +24,14 @@ const Img = styled.img`
 const RolledDie = ({
   color,
   icon,
+  alt,
 }) => {
   const Die = makeDie(color)
 
   return (
     <>
 
-    <Die > <Img src={icon} alt="fist" /> </Die >
+    <Die > <Img src={icon} alt={alt} /> </Die >
     </>
   )
 }

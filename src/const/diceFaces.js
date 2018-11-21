@@ -8,19 +8,12 @@ const WHITE_DIE_FACES = [
 ]
 
 const RED_DIE_FACES = [
-  // 'fist',
-  // 'blank',
-  // 'blank',
-  // 'shield',
-  // 'rushingMan',
-  // 'handShake',
-  // 
+  'agility',
+  'agility',
+  'agilityx2',
   'fist',
-  'fist',
-  'fist',
-  'flame',
-  'flame',
-  'flame',
+  'shield',
+  'unobtainium',
 ]
 
 export const DICE_FACES = {

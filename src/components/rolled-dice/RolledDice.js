@@ -16,7 +16,7 @@ const RolledDice = ({
 }) => {
   const rolledDice = dice.map((color) => {
     const icon = randomIconFromDie(color)
-    return (<RolledDie color={color} icon={icon} />)
+    return (<RolledDie color={color} icon={icon.icon} alt={icon.alt} />)
   })
 
 

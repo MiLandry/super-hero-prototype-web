@@ -4,10 +4,12 @@ import { DICE_FACES } from 'const/diceFaces'
 import fist from 'images/fist.png'
 import shield from 'images/shield.png'
 import agility from 'images/agility.png'
+import agilityx2 from 'images/agilityx2.png'
 import handShake from 'images/handshake.png'
 import brain from 'images/brain.png'
 import miss from 'images/miss.png'
 import flame from 'images/flame.png'
+import unobtainium from 'images/unobtainium.png'
 
 
 export const removeSpecifiedElementFromArray = (array, element) => {
@@ -38,14 +40,19 @@ const ICONS = {
   fist,
   shield,
   agility,
+  agilityx2,
   handShake,
   brain,
   miss,
   flame,
+  unobtainium,
 }
 
 export const randomIconFromDie = (color) => {
   const faces = DICE_FACES[color]
-  const randomIconKey = shuffle(faces)[0]
-  return ICONS[randomIconKey]
+  const alt = shuffle(faces)[0]
+  return {
+    icon: ICONS[alt],
+    alt,
+  }
 }
