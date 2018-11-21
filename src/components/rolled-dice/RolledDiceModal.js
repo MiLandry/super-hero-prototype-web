@@ -12,9 +12,9 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    backgroundColor: 'green',
-    height: '20rem',
-    width: '14rem',
+    backgroundColor: 'navy',
+    height: '80%',
+    width: '90%',
     color: 'black',
   },
 }

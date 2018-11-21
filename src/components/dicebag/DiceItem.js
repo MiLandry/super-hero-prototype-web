@@ -12,7 +12,7 @@ class DiceItem extends Component {
       color,
     } = this.props
 
-    const ColoredDie = styled.div`
+    const ColoredDie = styled.li`
       background-color: ${color};
       width: 2rem;
       height: 2rem;

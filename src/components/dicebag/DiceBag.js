@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import DiceItem from './DiceItem'
 import './DiceBag.css'
 
-const GridListWraper = styled.div`
+const GridListWraper = styled.ul`
   margin: 1rem;
   padding: 1rem;
   background-color: grey;

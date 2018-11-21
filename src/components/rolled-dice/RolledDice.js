@@ -6,10 +6,10 @@ import styled from 'styled-components'
 import { randomIconFromDie } from 'utils'
 import RolledDie from './RolledDie'
 
-// const FooWraper = styled.div`
-//   background-color: orange;
-//   display: flex;
-// `
+const DiceContainer = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+`
 
 const RolledDice = ({
   dice = [],
@@ -22,11 +22,13 @@ const RolledDice = ({
 
   return (
     <>
-
+<DiceContainer>
+  
       { (dice.length === 0)
         ? 'Draw dice first'
         : rolledDice
         }
+</DiceContainer>
     </>
   )
 }
