@@ -4,6 +4,11 @@ import styled from 'styled-components'
 // import DiceItem from 'components/dicebag/DiceItem'
 import RolledDie from './RolledDie'
 
+// const FooWraper = styled.div`
+//   background-color: orange;
+//   display: flex;
+// `
+
 const RolledDice = ({
   dice = [],
 }) => {
@@ -12,6 +17,7 @@ const RolledDice = ({
 
   return (
     <>
+
       { (dice.length === 0)
         ? 'Draw dice first'
         : rolledDice

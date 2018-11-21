@@ -14,8 +14,9 @@ const customStyles = {
     transform: 'translate(-50%, -50%)',
     // backgroundColor: '#232125',
     backgroundColor: 'green',
-    height: '14rem',
+    height: '20rem',
     width: '14rem',
+    color: 'black',
   },
 }
 

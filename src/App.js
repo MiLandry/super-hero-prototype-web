@@ -37,7 +37,7 @@ class App extends Component {
         'red',
         'red',
       ],
-      drawnDice: [],
+      drawnDice: ['white', 'red'],
       dicePoolNumber: 4,
       modalIsOpen: false,
     }
