@@ -1,4 +1,10 @@
 import { LIGHT_COLORS } from 'const'
+import { DICE_FACES } from 'const/diceFaces'
+import fist from 'images/fist.png'
+import flame from 'images/flame.png'
+import shield from 'images/fist.png'
+import handShake from 'images/fist.png'
+import rushingMan from 'images/fist.png'
 
 export const removeSpecifiedElementFromArray = (array, element) => {
   const index = array.indexOf(element)
@@ -23,3 +29,14 @@ function shuffle(a) {
 }
 
 export const isLight = color => LIGHT_COLORS.includes(color)
+
+const ICONS = {
+  fist,
+  flame,
+}
+
+export const randomIconFromDie = (color) => {
+  const faces = DICE_FACES[color]
+  const randomIconKey = shuffle(faces)[0]
+  return ICONS[randomIconKey]
+}

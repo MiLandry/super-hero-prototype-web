@@ -12,7 +12,6 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    // backgroundColor: '#232125',
     backgroundColor: 'green',
     height: '20rem',
     width: '14rem',
@@ -25,21 +24,17 @@ const FooBar = ({
   onAfterOpen,
   onRequestClose,
   drawnDice,
-}) => {
-
-
-  return (
-    <Modal
-      isOpen={isOpen}
-      onAfterOpen={onAfterOpen}
-      onRequestClose={onRequestClose}
-      style={customStyles}
-      contentLabel="Example Modal"
-    >
+}) => (
+  <Modal
+    isOpen={isOpen}
+    onAfterOpen={onAfterOpen}
+    onRequestClose={onRequestClose}
+    style={customStyles}
+    contentLabel="Example Modal"
+  >
     <RolledDice dice={drawnDice} />
-    </Modal>
-  )
-}
+  </Modal>
+)
 
 FooBar.propTypes = {
   isOpen: PropTypes.bool.isRequired,

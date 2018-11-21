@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import icon from 'images/fist.png'
+
 
 
 const makeDie = color => (
@@ -23,6 +23,7 @@ const Img = styled.img`
 
 const RolledDie = ({
   color,
+  icon,
 }) => {
   const Die = makeDie(color)
 
