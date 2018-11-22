@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 
-
-const makeDie = color => (
-  styled.div`
-  background-color: ${color};
+const makeDie = (color) => {
+  const backgroundColor = (color === 'black') ? 'SlateGrey' : color
+  return styled.div`
+  background-color: ${backgroundColor};
   border: solid;
   margin-right: 10px;
   height: 5rem;
@@ -14,7 +14,7 @@ const makeDie = color => (
   float: left;
   margin: 1rem;
 `
-)
+}
 
 const Img = styled.img`
   max-width: 100%;
@@ -31,7 +31,11 @@ const RolledDie = ({
   return (
     <>
 
-    <Die > <Img src={icon} alt={alt} /> </Die >
+      <Die>
+        {' '}
+        <Img src={icon} alt={alt} />
+        {' '}
+      </Die>
     </>
   )
 }

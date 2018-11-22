@@ -13,13 +13,6 @@ import {
 import RolledDiceModal from 'components/rolled-dice/RolledDiceModal'
 
 
-const setSpiderMan = () => {
-  this.setState('spiermdandinec')
-  alert('setSpiderMan')
-}
-
-
-
 // Modal.setAppElement('#yourAppElement')
 
 
@@ -28,16 +21,9 @@ class App extends Component {
     super(props)
     this.state = {
       dice: [
-        'white',
-        'white',
-        'white',
-        'white',
-        'white',
-        'red',
-        'red',
-        'red',
+        'black',
       ],
-      drawnDice: [],
+      drawnDice: ['black'],
       dicePoolNumber: 4,
       modalIsOpen: false,
     }
