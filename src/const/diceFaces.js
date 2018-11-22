@@ -40,7 +40,7 @@ const BLACK_DIE_FACES = [
   'glassx2',
   'fist',
   'brain',
-  'influence',
+  'handShake',
 ]
 
 export const DICE_FACES = {
