@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Modal from 'react-modal'
 import RolledDice from 'components/rolled-dice/RolledDice'
+import Button from 'components/core/Button'
 
 const customStyles = {
   content: {
@@ -24,6 +25,7 @@ const FooBar = ({
   onAfterOpen,
   onRequestClose,
   drawnDice,
+  closeModal,
 }) => (
   <Modal
     isOpen={isOpen}
@@ -33,6 +35,7 @@ const FooBar = ({
     contentLabel="Example Modal"
   >
     <RolledDice dice={drawnDice} />
+    <Button onClick={closeModal}>Close</Button>
   </Modal>
 )
 

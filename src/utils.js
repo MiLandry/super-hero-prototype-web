@@ -10,6 +10,7 @@ import fistx2 from 'images/fistx2.png'
 import fistShield from 'images/fistshield.png'
 import flame from 'images/flame.png'
 import glass from 'images/glass.png'
+import glassx2 from 'images/glassx2.png'
 import gun from 'images/gun.png'
 import handShake from 'images/handshake.png'
 import heal from 'images/healing.png'
@@ -32,6 +33,7 @@ const ICONS = {
   fistShield,
   flame,
   glass,
+  glassx2,
   gun,
   handShake,
   heal,

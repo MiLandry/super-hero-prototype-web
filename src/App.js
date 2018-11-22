@@ -144,6 +144,7 @@ class App extends Component {
           onRequestClose={this.closeModal}
           contentLabel="Example Modal"
           drawnDice={drawnDice}
+          closeModal={this.closeModal}
           >
         </RolledDiceModal>
       </div>
