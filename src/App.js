@@ -28,16 +28,9 @@ class App extends Component {
     super(props)
     this.state = {
       dice: [
-        'white',
-        'white',
-        'white',
-        'white',
-        'white',
-        'red',
-        'red',
-        'red',
+        'green',
       ],
-      drawnDice: [],
+      drawnDice: ['green'],
       dicePoolNumber: 4,
       modalIsOpen: false,
     }

@@ -6,11 +6,13 @@ import agilityx2 from 'images/agilityx2.png'
 import brain from 'images/brain.png'
 import evilFlame from 'images/evilFlame.png'
 import fist from 'images/fist.png'
+import fistx2 from 'images/fistx2.png'
+import fistShield from 'images/fistshield.png'
 import flame from 'images/flame.png'
 import glass from 'images/glass.png'
 import gun from 'images/gun.png'
 import handShake from 'images/handshake.png'
-import healing from 'images/healing.png'
+import heal from 'images/healing.png'
 import joker from 'images/joker.png'
 import miss from 'images/miss.png'
 import placeHolder from 'images/placeholder.png'
@@ -26,11 +28,13 @@ const ICONS = {
   brain,
   evilFlame,
   fist,
+  fistx2,
+  fistShield,
   flame,
   glass,
   gun,
   handShake,
-  healing,
+  heal,
   joker,
   miss,
   placeHolder,
