@@ -1,15 +1,45 @@
 import { LIGHT_COLORS } from 'const'
 import { DICE_FACES } from 'const/diceFaces'
 //images
-import fist from 'images/fist.png'
-import shield from 'images/shield.png'
 import agility from 'images/agility.png'
 import agilityx2 from 'images/agilityx2.png'
-import handShake from 'images/handshake.png'
 import brain from 'images/brain.png'
-import miss from 'images/miss.png'
+import evilFlame from 'images/evilFlame.png'
+import fist from 'images/fist.png'
 import flame from 'images/flame.png'
+import glass from 'images/glass.png'
+import gun from 'images/gun.png'
+import handShake from 'images/handshake.png'
+import healing from 'images/healing.png'
+import joker from 'images/joker.png'
+import miss from 'images/miss.png'
+import placeHolder from 'images/placeholder.png'
+import poison from 'images/poison.png'
+import shield from 'images/shield.png'
+import twoface from 'images/twoface.png'
 import unobtainium from 'images/unobtainium.png'
+
+
+const ICONS = {
+  agility,
+  agilityx2,
+  brain,
+  evilFlame,
+  fist,
+  flame,
+  glass,
+  gun,
+  handShake,
+  healing,
+  joker,
+  miss,
+  placeHolder,
+  poison,
+  shield,
+  twoface,
+  unobtainium,
+
+}
 
 
 export const removeSpecifiedElementFromArray = (array, element) => {
@@ -35,18 +65,6 @@ function shuffle(a) {
 }
 
 export const isLight = color => LIGHT_COLORS.includes(color)
-
-const ICONS = {
-  fist,
-  shield,
-  agility,
-  agilityx2,
-  handShake,
-  brain,
-  miss,
-  flame,
-  unobtainium,
-}
 
 export const randomIconFromDie = (color) => {
   const faces = DICE_FACES[color]
